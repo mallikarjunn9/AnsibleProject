@@ -8,7 +8,7 @@ pipeline {
         }
         stage('Execute Ansible'){
             steps {
-                ansiblePlaybook becomeUser: 'jenkins', disableHostKeyChecking: true, installation: 'ansible', inventory: 'dev.inv', playbook: 'apache.yml', sudo: true
+                ansiblePlaybook becomeUser: 'jenkins', installation: 'ansible', inventory: '/etc/ansible', playbook: '/var/lib/jenkins/.ansible', sudo: true
             }
         }
     }
