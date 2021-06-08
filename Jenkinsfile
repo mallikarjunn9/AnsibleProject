@@ -8,7 +8,7 @@ pipeline {
         }
         stage('Execute Ansible'){
             steps {
-                ansiblePlaybooksh disableHostkeyChecking: true, installation:'ansible2', inventory: 'dev.inv', playbook:'apache.yml'
+                ansiblePlaybook becomeUser: 'jenkins', disableHostKeyChecking: true, installation: 'ansible', inventory: 'dev.inv', playbook: 'apache.yml', sudo: true
             }
         }
     }
