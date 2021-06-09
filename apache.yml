@@ -1,13 +1,14 @@
 ---
-- name: This sets up an httpd webserver
-  hosts: webservers
+- hosts: webservers
+  remote_user: ansible
+  become: yes
+  gather_facts: no
   tasks:
-          - name: Install apache packages 
-            yum:
-               name: httpd
-               state: present
-          - name: ensure httpd is running
-            service:
-                   name: httpd 
-                   state: started  
- ...
+  - name: Apache latest version installation
+    yum:
+      name: httpd
+      state: latest
+  - name: Enable service to start on boot up
+    service:
+      name: httpd
+      state: started

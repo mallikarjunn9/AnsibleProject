@@ -8,7 +8,7 @@ pipeline {
         }
         stage('Execute Ansible'){
             steps {
-                ansiblePlaybook installation: 'ansible', inventory: '/var/lib/jenkins/project/dev.inv', playbook: '/var/lib/jenkins/project/apache.yml', sudoUser: 'jenkins'
+                ansiblePlaybook installation: 'ansible', inventory: '/var/lib/jenkins/project/dev.inv', playbook: '/var/lib/jenkins/project/apache.yml', sudoUser: 'ansible'
             }
         }
     }
