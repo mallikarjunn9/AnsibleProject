@@ -3,7 +3,7 @@ pipeline {
     stages{
         stage('Git Checkout'){
             steps {
-                git 'https://github.com/mallikarjunn9/AnsibleProject'
+                git 'https://github.com/mallikarjunn9/AnsibleProject.git'
             }
         }
         stage('Execute Ansible'){
